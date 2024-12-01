@@ -41,28 +41,49 @@ function render(variables = {}) {
     document.querySelector('[for="socialMediaPosition"]').value;
 
   // Íconos de redes sociales
+  // Íconos de redes sociales
   let socialMediaLinks = `
-        ${
-          variables.twitter
-            ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
-            : ""
-        }
-        ${
-          variables.github
-            ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>`
-            : ""
-        }
-        ${
-          variables.linkedin
-            ? `<li><a href="https://linkedin.com/in/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
-            : ""
-        }
-        ${
-          variables.instagram
-            ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
-            : ""
-        }
-      `;
+<li>
+  <a href="${
+    variables.twitter
+      ? `https://twitter.com/${variables.twitter}`
+      : "https://twitter.com/"
+  }" 
+     class="${variables.twitter ? "" : "disabled"}">
+    <i class="fab fa-twitter"></i>
+  </a>
+</li>
+<li>
+  <a href="${
+    variables.github
+      ? `https://github.com/${variables.github}`
+      : "https://github.com/"
+  }" 
+     class="${variables.github ? "" : "disabled"}">
+    <i class="fab fa-github"></i>
+  </a>
+</li>
+<li>
+  <a href="${
+    variables.linkedin
+      ? `https://linkedin.com/in/${variables.linkedin}`
+      : "https://linkedin.com/in/"
+  }" 
+     class="${variables.linkedin ? "" : "disabled"}">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</li>
+<li>
+  <a href="${
+    variables.instagram
+      ? `https://instagram.com/${variables.instagram}`
+      : "https://instagram.com/"
+  }" 
+     class="${variables.instagram ? "" : "disabled"}">
+    <i class="fab fa-instagram"></i>
+  </a>
+</li>
+`;
 
   document.querySelector("#widget_content").innerHTML = `
       <div class="widget">
